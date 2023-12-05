@@ -122,6 +122,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        undo_redo: undo_redo {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UNDO_REDO";
+            bindings = <&kp K_UNDO>, <&kp K_REDO>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -185,10 +194,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &kp BACKSPACE  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &kp ENTER      &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp ESCAPE        &mkp MB1          &mkp MB2        &mkp MB3           &trans         &trans
-                        &trans  &trans  &trans    &trans            &trans            &trans
+&trans  &trans  &trans      &trans     &trans      &trans         &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &kp BACKSPACE  &trans
+&trans  &trans  &trans      &trans     &trans      &trans         &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &kp ENTER      &trans
+&trans  &trans  &undo_redo  &kp K_CUT  &kp K_COPY  &kp K_PASTE    &kp ESCAPE        &mkp MB1          &mkp MB2        &mkp MB3           &trans         &trans
+                            &trans     &trans      &trans         &trans            &trans            &trans
             >;
 
             label = "Mouse";
