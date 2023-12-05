@@ -131,6 +131,27 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        fast_mouse: fast_mouse {
+            compatible = "zmk,behavior-mouse-move";
+            label = "FAST_MOUSE";
+            #binding-cells = <1>;
+            acceleration-exponent = <1.5>;
+        };
+
+        av_mouse: av_mouse {
+            compatible = "zmk,behavior-mouse-move";
+            label = "AV_MOUSE";
+            #binding-cells = <1>;
+            acceleration-exponent = <1>;
+        };
+
+        slow_mouse: slow_mouse {
+            compatible = "zmk,behavior-mouse-move";
+            label = "SLOW_MOUSE";
+            #binding-cells = <1>;
+            acceleration-exponent = <0.5>;
+        };
     };
 
     keymap {
@@ -158,7 +179,7 @@
 &none  &kp ESC         &kp C_PREV            &kp C_PLAY_PAUSE  &kp C_NEXT            &bl BL_INC    &kp HOME            &kp PAGE_DOWN           &kp PG_UP             &kp END              &kp BACKSPACE  &none
 &none  &kp TAB         &kp C_VOLUME_DOWN     &kp C_MUTE        &kp C_VOLUME_UP       &bl BL_TOG    &kp LEFT            &shift_down_for_scroll  &shift_up_for_scroll  &kp RIGHT            &trans         &none
 &none  &kp LEFT_SHIFT  &kp C_BRIGHTNESS_DEC  &kp LG(LCTRL)     &kp C_BRIGHTNESS_INC  &bl BL_DEC    &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))         &kp LC(TAB)           &kp LA(RIGHT_ARROW)  &trans         &none
-                                             &kp LSHFT         &trans                &trans        &trans              &trans                  &kp LEFT_ALT
+                                             &kp LSHFT         &trans                &trans        &trans              &trans                  &trans
             >;
 
             label = "Navigation And Media";
@@ -174,8 +195,8 @@
             bindings = <
 &none  &kp ESCAPE      &lparen_lbracket  &kp DOUBLE_QUOTES  &rparen_rbracket   &kp NON_US_HASH         &plus_equals  &kp N1  &kp N2  &kp N3  &kp DELETE  &none
 &none  &kp TAB         &comma_lbrace     &kp SINGLE_QUOTE   &dot_rbrace        &kp PIPE                &kp MINUS     &kp N4  &kp N5  &kp N6  &trans      &none
-&none  &kp LEFT_SHIFT  &kp LEFT_BRACKET  &kp GRAVE          &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH    &kp LEFT_ALT  &kp N7  &kp N8  &kp N9  &trans      &none
-                                         &trans             &trans             &trans                  &trans        &trans  &kp N0
+&none  &kp LEFT_SHIFT  &kp LEFT_BRACKET  &kp GRAVE          &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH    &kp N0        &kp N7  &kp N8  &kp N9  &trans      &none
+                                         &trans             &trans             &trans                  &trans        &trans  &trans
             >;
 
             label = "Numbers and Symbols";
@@ -183,10 +204,10 @@
 
         fn {
             bindings = <
-&none  &none         &bt BT_PRV    &bt BT_CLR    &bt BT_NXT    &none           &kp F12  &kp F7  &kp F8        &kp F9  &kp BACKSPACE  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F10  &kp F4  &kp F5        &kp F6  &trans         &none
-&none  &none         &none         &none         &none         &none           &kp F11  &kp F1  &kp F2        &kp F3  &trans         &none
-                                   &trans        &trans        &trans          &trans   &trans  &kp LEFT_ALT
+&none  &none         &bt BT_PRV    &bt BT_CLR    &bt BT_NXT    &none           &kp F12  &kp F7  &kp F8  &kp F9  &kp BACKSPACE  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F10  &kp F4  &kp F5  &kp F6  &trans         &none
+&none  &none         &none         &none         &none         &none           &kp F11  &kp F1  &kp F2  &kp F3  &trans         &none
+                                   &trans        &trans        &trans          &trans   &trans  &trans
             >;
 
             label = "Functions and System";
