@@ -131,27 +131,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        fast_mouse: fast_mouse {
-            compatible = "zmk,behavior-mouse-move";
-            label = "FAST_MOUSE";
-            #binding-cells = <1>;
-            acceleration-exponent = <1.5>;
-        };
-
-        av_mouse: av_mouse {
-            compatible = "zmk,behavior-mouse-move";
-            label = "AV_MOUSE";
-            #binding-cells = <1>;
-            acceleration-exponent = <1>;
-        };
-
-        slow_mouse: slow_mouse {
-            compatible = "zmk,behavior-mouse-move";
-            label = "SLOW_MOUSE";
-            #binding-cells = <1>;
-            acceleration-exponent = <0.5>;
-        };
     };
 
     keymap {
