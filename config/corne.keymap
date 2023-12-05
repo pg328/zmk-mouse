@@ -34,7 +34,7 @@
         dot_comma: dot_comma {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_COMMA";
-            bindings = <&kp PERIOD>, <&kp LA(COMMA)>;
+            bindings = <&kp PERIOD>, <&kp KP_COMMA>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -52,25 +52,7 @@
         dot_rbrace: dot_rbrace {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_RBRACE";
-            bindings = <&kp PERIOD>, <&kp RBRC>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        shift_up_for_scroll: shift_up_for_scroll {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_UP_FOR_SCROLL";
-            bindings = <&kp UP_ARROW>, <&mwh SCROLL_UP>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        shift_down_for_scroll: shift_down_for_scroll {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_DOWN_FOR_SCROLL";
-            bindings = <&kp DOWN>, <&mwh SCROLL_DOWN>;
+            bindings = <&kp PERIOD>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -83,16 +65,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <500>;
-            flavor = "tap-preferred";
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NEW_BEHAVIOR";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <350>;
             flavor = "tap-preferred";
         };
 
@@ -114,19 +86,19 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        plus_equals: plus_equals {
+        undo_redo: undo_redo {
             compatible = "zmk,behavior-mod-morph";
-            label = "PLUS_EQUALS";
-            bindings = <&kp PLUS>, <&kp EQUAL>;
+            label = "UNDO_REDO";
+            bindings = <&kp K_UNDO>, <&kp K_REDO>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        undo_redo: undo_redo {
+        plus_equals: plus_equals {
             compatible = "zmk,behavior-mod-morph";
-            label = "UNDO_REDO";
-            bindings = <&kp K_UNDO>, <&kp K_REDO>;
+            label = "PLUS_EQUALS";
+            bindings = <&kp PLUS>, <&kp KP_EQUAL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -155,10 +127,10 @@
 
         nav_media {
             bindings = <
-&none  &kp ESC         &kp C_PREV            &kp C_PLAY_PAUSE  &kp C_NEXT            &bl BL_INC    &kp HOME            &kp PAGE_DOWN           &kp PG_UP             &kp END              &kp BACKSPACE  &none
-&none  &kp TAB         &kp C_VOLUME_DOWN     &kp C_MUTE        &kp C_VOLUME_UP       &bl BL_TOG    &kp LEFT            &shift_down_for_scroll  &shift_up_for_scroll  &kp RIGHT            &trans         &none
-&none  &kp LEFT_SHIFT  &kp C_BRIGHTNESS_DEC  &kp LG(LCTRL)     &kp C_BRIGHTNESS_INC  &bl BL_DEC    &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))         &kp LC(TAB)           &kp LA(RIGHT_ARROW)  &trans         &none
-                                             &kp LSHFT         &trans                &trans        &trans              &trans                  &trans
+&none  &kp ESC         &kp C_PREV            &kp C_PLAY_PAUSE  &kp C_NEXT            &bl BL_INC    &kp HOME            &kp PAGE_DOWN    &kp PG_UP     &kp END              &kp BACKSPACE  &none
+&none  &kp TAB         &kp C_VOLUME_DOWN     &kp C_MUTE        &kp C_VOLUME_UP       &bl BL_TOG    &kp LEFT            &kp DOWN_ARROW   &kp UP_ARROW  &kp RIGHT            &kp ENTER      &none
+&none  &kp LEFT_SHIFT  &kp C_BRIGHTNESS_DEC  &kp LG(LCTRL)     &kp C_BRIGHTNESS_INC  &bl BL_DEC    &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))  &kp LC(TAB)   &kp LA(RIGHT_ARROW)  &trans         &none
+                                             &kp LSHFT         &trans                &trans        &trans              &trans           &trans
             >;
 
             label = "Navigation And Media";
@@ -172,10 +144,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp ESCAPE      &lparen_lbracket  &kp DOUBLE_QUOTES  &rparen_rbracket   &kp NON_US_HASH         &plus_equals  &kp N1  &kp N2  &kp N3  &kp DELETE  &none
-&none  &kp TAB         &comma_lbrace     &kp SINGLE_QUOTE   &dot_rbrace        &kp PIPE                &kp MINUS     &kp N4  &kp N5  &kp N6  &trans      &none
-&none  &kp LEFT_SHIFT  &kp LEFT_BRACKET  &kp GRAVE          &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH    &kp N0        &kp N7  &kp N8  &kp N9  &trans      &none
-                                         &trans             &trans             &trans                  &trans        &trans  &trans
+&none  &kp ESCAPE      &lparen_lbracket  &kp DOUBLE_QUOTES  &rparen_rbracket   &kp NON_US_HASH         &none      &kp N1  &kp N2  &kp N3  &kp DELETE  &none
+&none  &kp TAB         &comma_lbrace     &kp SINGLE_QUOTE   &dot_rbrace        &kp PIPE                &kp MINUS  &kp N4  &kp N5  &kp N6  &kp RET     &none
+&none  &kp LEFT_SHIFT  &kp LEFT_BRACKET  &kp GRAVE          &kp RIGHT_BRACKET  &kp NON_US_BACKSLASH    &kp N0     &kp N7  &kp N8  &kp N9  &trans      &none
+                                         &trans             &trans             &trans                  &trans     &trans  &trans
             >;
 
             label = "Numbers and Symbols";
