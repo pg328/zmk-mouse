@@ -18,6 +18,24 @@
             bindings = <&caps_word>;
             key-positions = <2 3 4>;
         };
+
+        Cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <36 27>;
+            layers = <0>;
+        };
+
+        Copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <36 28>;
+            layers = <0>;
+        };
+
+        paste {
+            bindings = <&kp K_PASTE>;
+            key-positions = <36 29>;
+            layers = <0>;
+        };
     };
 
     behaviors {
