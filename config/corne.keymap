@@ -18,24 +18,6 @@
             bindings = <&caps_word>;
             key-positions = <2 3 4>;
         };
-
-        Cut {
-            bindings = <&kp K_CUT>;
-            key-positions = <36 27>;
-            layers = <0>;
-        };
-
-        Copy {
-            bindings = <&kp K_COPY>;
-            key-positions = <36 28>;
-            layers = <0>;
-        };
-
-        paste {
-            bindings = <&kp K_PASTE>;
-            key-positions = <36 29>;
-            layers = <0>;
-        };
     };
 
     behaviors {
@@ -132,10 +114,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q           &kp W  &kp E          &kp R  &kp T                    &kp Y                 &kp U  &kp I         &kp O        &kp P                    &none
-&none  &kp A           &kp S  &kp D          &kp F  &kp G                    &kp H                 &kp J  &kp K         &kp L        &kp SEMI                 &none
-&none  &kp LEFT_SHIFT  &kp Z  &kp X          &kp C  &kp V                    &kp B                 &kp N  &kp M         &key_repeat  &triple_tap_mouse_layer  &none
-                              &kp LG(LCTRL)  &mo 2  &hold_tap LCTRL SPACE    &hold_tap LGUI SPACE  &mo 1  &kp LEFT_ALT
+&none  &kp Q           &kp W  &kp E  &kp R  &kp T                  &kp Y                 &kp U  &kp I         &kp O        &kp P                    &none
+&none  &kp A           &kp S  &kp D  &kp F  &kp G                  &kp H                 &kp J  &kp K         &kp L        &kp SEMI                 &none
+&none  &kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V                  &kp B                 &kp N  &kp M         &key_repeat  &triple_tap_mouse_layer  &none
+                              &mo 5  &mo 2  &hold_tap LCTRL RET    &hold_tap LGUI SPACE  &mo 1  &kp LEFT_ALT
             >;
 
             label = "Layer 1";
@@ -189,6 +171,17 @@
             >;
 
             label = "Mouse";
+        };
+
+        scts {
+            bindings = <
+&none   &kp LS(LA(LC(LG(Q))))  &kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(E))))  &kp LS(LA(LC(LG(R))))  &kp LS(LA(LC(LG(T))))    &kp Y             &kp U                   &kp I                 &kp O                    &kp LC(LS(P))  &trans
+&none   &kp LS(LA(LC(LG(A))))  &kp LS(LA(LC(LG(S))))  &kp LS(LA(LC(LG(D))))  &kp LS(LA(LC(LG(F))))  &kp LS(LA(LC(LG(G))))    &kp LC(LG(LEFT))  &kp LC(LG(DOWN_ARROW))  &kp LC(LG(UP_ARROW))  &kp LC(LG(RIGHT_ARROW))  &kp SEMI       &trans
+&trans  &kp CAPSLOCK           &kp K_UNDO             &kp K_CUT              &kp K_COPY             &kp K_PASTE              &kp B             &kp LC(LS(N))           &kp M                 &kp DOT                  &kp FSLH       &trans
+                                                      &trans                 &trans                 &trans                   &kp LG(SPACE)     &trans                  &trans
+            >;
+
+            label = "Shortcuts";
         };
     };
 
