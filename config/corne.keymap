@@ -31,19 +31,19 @@
             flavor = "tap-preferred";
         };
 
-        comma_lparen: comma_lparen {
+        comma_lbrace: comma_lbrace {
             compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_LPAREN";
-            bindings = <&kp COMMA>, <&kp LEFT_PARENTHESIS>;
+            label = "COMMA_LBRACE";
+            bindings = <&kp COMMA>, <&kp LEFT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_rparen: dot_rparen {
+        dot_rbrace: dot_rbrace {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_RPAREN";
-            bindings = <&kp PERIOD>, <&kp RIGHT_PARENTHESIS>;
+            label = "DOT_RBRACE";
+            bindings = <&kp PERIOD>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -83,6 +83,24 @@
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&none>, <&tog 4>;
         };
+
+        lbracket_lparen: lbracket_lparen {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBRACKET_LPAREN";
+            bindings = <&kp LEFT_BRACKET>, <&kp LEFT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        rbracket_rparen: rbracket_rparen {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RBRACKET_RPAREN";
+            bindings = <&kp RIGHT_BRACKET>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -96,10 +114,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q      &kp W  &kp E          &kp R  &kp T                    &kp Y                 &kp U  &kp I         &kp O        &kp P                    &none
-&none  &kp A      &kp S  &kp D          &kp F  &kp G                    &kp H                 &kp J  &kp K         &kp L        &kp SEMI                 &none
-&none  &sk LSHFT  &kp Z  &kp X          &kp C  &kp V                    &kp B                 &kp N  &kp M         &key_repeat  &triple_tap_mouse_layer  &none
-                         &kp LG(LCTRL)  &mo 2  &hold_tap LCTRL SPACE    &hold_tap LGUI SPACE  &mo 1  &kp LEFT_ALT
+&none  &kp Q      &kp W  &kp E              &kp R  &kp T                    &kp Y                 &kp U  &kp I         &kp O        &kp P                    &none
+&none  &kp A      &kp S  &kp D              &kp F  &kp G                    &kp H                 &kp J  &kp K         &kp L        &kp SEMI                 &none
+&none  &sk LSHFT  &kp Z  &kp X              &kp C  &kp V                    &kp B                 &kp N  &kp M         &key_repeat  &triple_tap_mouse_layer  &none
+                         &kp LG(LS(LCTRL))  &mo 2  &hold_tap LCTRL SPACE    &hold_tap LGUI SPACE  &mo 1  &kp LEFT_ALT
             >;
 
             label = "Layer 1";
@@ -124,10 +142,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp ESCAPE      &kp LBKT       &kp DOUBLE_QUOTES  &kp RBKT          &kp NON_US_HASH         &plus_equals  &kp N1  &kp N2  &kp N3  &kp DELETE  &none
-&none  &kp TAB         &comma_lparen  &kp SINGLE_QUOTE   &dot_rparen       &kp PIPE                &kp MINUS     &kp N4  &kp N5  &kp N6  &kp RET     &none
-&none  &kp LEFT_SHIFT  &kp LESS_THAN  &kp GRAVE          &kp GREATER_THAN  &kp NON_US_BACKSLASH    &kp N0        &kp N7  &kp N8  &kp N9  &trans      &none
-                                      &trans             &trans            &trans                  &trans        &trans  &trans
+&none  &kp ESCAPE      &lbracket_lparen  &kp DOUBLE_QUOTES  &rbracket_rparen  &kp NON_US_HASH         &plus_equals  &kp N7        &kp N8        &kp N9        &kp DELETE  &none
+&none  &kp TAB         &comma_lbrace     &kp SINGLE_QUOTE   &dot_rbrace       &kp PIPE                &kp MINUS     &kp N4        &kp N5        &kp N6        &kp RET     &none
+&none  &kp LEFT_SHIFT  &kp LESS_THAN     &kp GRAVE          &kp GREATER_THAN  &kp NON_US_BACKSLASH    &kp N0        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &none
+                                         &trans             &trans            &trans                  &trans        &trans        &trans
             >;
 
             label = "Numbers and Symbols";
