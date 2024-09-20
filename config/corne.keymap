@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     combos {
@@ -119,10 +119,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q           &kp W  &kp E  &kp R  &kp T                  &kp Y                 &kp U  &kp I         &kp O        &kp P                    &none
-&none  &kp A           &kp S  &kp D  &kp F  &kp G                  &kp H                 &kp J  &kp K         &kp L        &kp SEMI                 &none
-&none  &kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V                  &kp B                 &kp N  &kp M         &key_repeat  &triple_tap_mouse_layer  &none
-                              &mo 5  &mo 2  &hold_tap LCTRL RET    &hold_tap LGUI SPACE  &mo 1  &kp LEFT_ALT
+&none  &kp Q           &kp W  &kp E  &kp R  &kp T        &kp Y                 &kp U  &kp I         &kp O        &kp P                    &none
+&none  &kp A           &kp S  &kp D  &kp F  &kp G        &kp H                 &kp J  &kp K         &kp L        &kp SEMI                 &none
+&none  &kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B                 &kp N  &kp M         &key_repeat  &triple_tap_mouse_layer  &none
+                              &mo 5  &mo 2  &kp LCTRL    &hold_tap LGUI SPACE  &mo 1  &kp LEFT_ALT
             >;
 
             label = "Layer 1";
