@@ -133,7 +133,7 @@
 &none  &kp ESC         &kp C_PREV            &kp C_PLAY_PAUSE  &kp C_NEXT            &bl BL_INC    &kp HOME            &kp PAGE_DOWN    &kp PG_UP     &kp END              &kp BACKSPACE  &none
 &none  &kp TAB         &kp C_VOLUME_DOWN     &kp C_MUTE        &kp C_VOLUME_UP       &mo 4         &kp LEFT            &kp DOWN_ARROW   &kp UP_ARROW  &kp RIGHT            &kp ENTER      &none
 &none  &kp LEFT_SHIFT  &kp C_BRIGHTNESS_DEC  &kp LG(LCTRL)     &kp C_BRIGHTNESS_INC  &bl BL_DEC    &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))  &kp LC(TAB)   &kp LA(RIGHT_ARROW)  &trans         &none
-                                             &trans            &mo 3                 &trans        &trans              &trans           &trans
+                                             &trans            &trans                &trans        &trans              &trans           &trans
             >;
 
             label = "Navigation And Media";
@@ -150,7 +150,7 @@
 &none  &kp ESCAPE      &lbracket_lparen  &kp DOUBLE_QUOTES  &rbracket_rparen  &kp HASH                &kp EQUAL  &kp N7        &kp N8        &kp N9        &kp DELETE  &none
 &none  &kp TAB         &comma_lbrace     &kp SINGLE_QUOTE   &dot_rbrace       &kp NON_US_HASH         &kp MINUS  &kp N4        &kp N5        &kp N6        &kp RET     &none
 &none  &kp LEFT_SHIFT  &kp LESS_THAN     &kp GRAVE          &kp GREATER_THAN  &kp NON_US_BACKSLASH    &kp PLUS   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &none
-                                         &kp LEFT_ALT       &trans            &trans                  &trans     &mo 3         &kp N0
+                                         &kp LEFT_ALT       &trans            &trans                  &trans     &trans        &kp N0
             >;
 
             label = "Numbers and Symbols";
@@ -171,7 +171,7 @@
             bindings = <
 &kp ESCAPE  &tog 4  &trans      &trans     &trans      &trans         &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT  &kp BACKSPACE  &trans
 &trans      &trans  &trans      &trans     &trans      &trans         &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT    &kp ENTER      &trans
-&trans      &trans  &undo_redo  &kp K_CUT  &kp K_COPY  &kp K_PASTE    &kp ESCAPE        &mkp MB1          &mkp MB3        &mkp MB2           &tog 4         &trans
+&trans      &trans  &undo_redo  &kp K_CUT  &kp K_COPY  &kp K_PASTE    &kp ESCAPE        &mkp MB1          &mkp MB3        &tog 4             &trans         &trans
                                 &none      &trans      &trans         &mkp MB2          &mkp MB1          &trans
             >;
 
@@ -181,9 +181,9 @@
         scts {
             bindings = <
 &none   &kp LS(LC(Q))  &kp LS(LC(W))  &kp LS(LC(E))  &kp LS(LC(R))  &kp LS(LC(T))    &kp LS(LC(Y))  &kp LS(LC(U))  &kp LS(LC(I))  &kp LS(LC(O))  &kp LC(LS(P))      &trans
-&none   &kp LS(LC(A))  &kp LS(LC(S))  &kp LS(LC(D))  &kp LS(LC(F))  &kp LS(LC(G))    &kp LS(LC(H))  &kp LS(LC(J))  &kp LS(LC(K))  &kp LS(LC(L))  &kp LS(LC(COLON))  &trans
+&none   &kp LS(LC(A))  &kp LS(LC(S))  &kp LS(LC(D))  &mo 3          &kp LS(LC(G))    &kp LS(LC(H))  &kp LS(LC(J))  &kp LS(LC(K))  &kp LS(LC(L))  &kp LS(LC(COLON))  &trans
 &trans  &kp CAPSLOCK   &kp LS(LC(Z))  &kp LS(LC(X))  &kp LS(LC(C))  &kp LS(LC(V))    &kp LS(LC(B))  &kp LS(LC(N))  &kp LS(LC(M))  &tog 4         &kp LS(LC(QMARK))  &trans
-                                      &trans         &trans         &trans           &kp LG(SPACE)  &trans         &trans
+                                      &trans         &trans         &trans           &kp LG(SPACE)  &trans         &sl 3
             >;
 
             label = "Shortcuts";
